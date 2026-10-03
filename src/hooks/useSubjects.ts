@@ -23,7 +23,7 @@ export function useUpdateSubject() {
     const invalidate = useInvalidate()
     return useMutation({
         mutationFn: updateSubject,
-        onSuccess: () => invalidate('subjects'),
+        onSuccess: () => invalidate('subjects', 'due-topics'),
     })
 }
 
@@ -31,6 +31,6 @@ export function useDeleteSubject() {
     const invalidate = useInvalidate()
     return useMutation({
         mutationFn: deleteSubject,
-        onSuccess: () => invalidate('subjects', 'topics'),
+        onSuccess: () => invalidate('subjects', 'topics', 'due-topics'),
     })
 }

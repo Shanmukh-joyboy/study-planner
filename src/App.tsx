@@ -4,7 +4,7 @@ import { AppLayout } from './components/AppLayout'
 import { AuthProvider } from './components/AuthProvider'
 import { ProtectedRoute } from './components/ProtectedRoute'
 import { queryClient } from './lib/query-client'
-import { HomePage } from './pages/HomePage'
+import { TodayPage } from './pages/TodayPage'
 import { LoginPage } from './pages/LoginPage'
 import { SignupPage } from './pages/SignupPage'
 import { SubjectsPage } from './pages/SubjectsPage'
@@ -20,7 +20,7 @@ export default function App() {
             <Route path="/signup" element={<SignupPage />} />
             <Route element={<ProtectedRoute />}>
               <Route element={<AppLayout />}>
-                <Route index element={<HomePage />} />
+                <Route index element={<TodayPage />} />
                 <Route path="subjects" element={<SubjectsPage />} />
                 <Route path="subjects/:subjectId" element={<TopicsPage />} />
               </Route>

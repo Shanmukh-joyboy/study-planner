@@ -36,6 +36,9 @@ export function AppLayout() {
                             </span>
                             Study Planner
                         </Link>
+                        <NavLink to="/" end className={navLinkClass}>
+                            Today
+                        </NavLink>
                         <NavLink to="/subjects" className={navLinkClass}>
                             Subjects
                         </NavLink>

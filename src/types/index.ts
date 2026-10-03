@@ -35,3 +35,6 @@ export interface TopicFields {
 export interface TopicInput extends TopicFields {
     subject_id: string
 }
+export interface DueTopic extends Topic {
+    subjects: Pick<Subject, 'name' | 'color'>
+}
