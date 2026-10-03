@@ -38,3 +38,34 @@ export interface TopicInput extends TopicFields {
 export interface DueTopic extends Topic {
     subjects: Pick<Subject, 'name' | 'color'>
 }
+export interface StudySession {
+    id: string
+    user_id: string
+    topic_id: string | null
+    date: string
+    start_time: string
+    duration_minutes: number
+    completed: boolean
+    created_at: string
+}
+
+export interface SessionWithTopic extends StudySession {
+    topics: { title: string; subjects: { name: string; color: string } } | null
+}
+
+export interface SessionInput {
+    topic_id: string | null
+    date: string
+    start_time: string
+    duration_minutes: number
+}
+
+export type SessionChanges = Partial<
+    Pick<StudySession, 'topic_id' | 'date' | 'start_time' | 'duration_minutes' | 'completed'>
+>
+
+export interface TopicOption {
+    id: string
+    title: string
+    subjects: { name: string }
+}

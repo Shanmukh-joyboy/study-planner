@@ -30,7 +30,7 @@ export function useCreateTopic() {
     const invalidate = useInvalidate()
     return useMutation({
         mutationFn: createTopic,
-        onSuccess: () => invalidate('topics', 'due-topics'),
+        onSuccess: () => invalidate('topics', 'due-topics', 'sessions'),
     })
 }
 
@@ -38,7 +38,7 @@ export function useUpdateTopic() {
     const invalidate = useInvalidate()
     return useMutation({
         mutationFn: updateTopic,
-        onSuccess: () => invalidate('topics', 'due-topics'),
+        onSuccess: () => invalidate('topics', 'due-topics', 'sessions'),
     })
 }
 
@@ -46,7 +46,7 @@ export function useReviewTopic() {
     const invalidate = useInvalidate()
     return useMutation({
         mutationFn: saveReview,
-        onSuccess: () => invalidate('topics', 'due-topics'),
+        onSuccess: () => invalidate('topics', 'due-topics', 'sessions'),
     })
 }
 
@@ -54,6 +54,6 @@ export function useDeleteTopic() {
     const invalidate = useInvalidate()
     return useMutation({
         mutationFn: deleteTopic,
-        onSuccess: () => invalidate('topics', 'due-topics'),
+        onSuccess: () => invalidate('topics', 'due-topics', 'sessions'),
     })
 }
