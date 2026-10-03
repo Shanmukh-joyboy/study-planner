@@ -28,7 +28,7 @@ export function TopicItem({ topic }: { topic: Topic }) {
     }
 
     return (
-        <li className="rounded-lg border border-slate-200 bg-white p-4">
+        <li className="rounded-2xl border border-slate-200/70 bg-white/80 p-5 shadow-sm backdrop-blur">
             {editing ? (
                 <TopicForm
                     initial={{ title: topic.title, notes: topic.notes, exam_date: topic.exam_date }}

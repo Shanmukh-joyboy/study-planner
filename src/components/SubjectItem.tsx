@@ -24,7 +24,7 @@ export function SubjectItem({ subject }: { subject: Subject }) {
     }
 
     return (
-        <li className="rounded-lg border border-slate-200 bg-white p-4">
+        <li className="rounded-2xl border border-slate-200/70 bg-white/80 p-5 shadow-sm backdrop-blur">
             {editing ? (
                 <SubjectForm
                     initial={{ name: subject.name, color: subject.color }}

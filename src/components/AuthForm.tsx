@@ -1,4 +1,5 @@
 import { useState, type FormEvent, type ReactNode } from 'react'
+import { inputClass, labelClass, primaryButtonClass } from '../lib/styles'
 
 interface AuthFormProps {
     title: string
@@ -6,9 +7,6 @@ interface AuthFormProps {
     onSubmit: (email: string, password: string) => Promise<string | null>
     footer: ReactNode
 }
-
-const inputClass =
-    'w-full rounded-md border border-slate-300 px-3 py-2 focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-200'
 
 export function AuthForm({ title, submitLabel, onSubmit, footer }: AuthFormProps) {
     const [email, setEmail] = useState('')
@@ -32,12 +30,18 @@ export function AuthForm({ title, submitLabel, onSubmit, footer }: AuthFormProps
     }
 
     return (
-        <main className="flex min-h-screen items-center justify-center bg-slate-50 px-4">
-            <div className="w-full max-w-sm rounded-xl bg-white p-8 shadow">
-                <h1 className="mb-6 text-2xl font-semibold text-slate-900">{title}</h1>
+        <main className="flex min-h-screen items-center justify-center px-4">
+            <div className="w-full max-w-sm rounded-2xl border border-slate-200/70 bg-white/80 p-8 shadow-xl shadow-indigo-100/60 backdrop-blur">
+                <div
+                    aria-hidden="true"
+                    className="mb-5 flex h-11 w-11 items-center justify-center rounded-xl bg-indigo-600 text-lg font-bold text-white shadow-md shadow-indigo-300/60"
+                >
+                    S
+                </div>
+                <h1 className="mb-6 text-2xl font-bold tracking-tight text-slate-900">{title}</h1>
                 <form onSubmit={handleSubmit} className="space-y-4">
                     <div>
-                        <label htmlFor="email" className="mb-1 block text-sm font-medium text-slate-700">
+                        <label htmlFor="email" className={labelClass}>
                             Email
                         </label>
                         <input
@@ -51,7 +55,7 @@ export function AuthForm({ title, submitLabel, onSubmit, footer }: AuthFormProps
                         />
                     </div>
                     <div>
-                        <label htmlFor="password" className="mb-1 block text-sm font-medium text-slate-700">
+                        <label htmlFor="password" className={labelClass}>
                             Password
                         </label>
                         <input
@@ -74,11 +78,7 @@ export function AuthForm({ title, submitLabel, onSubmit, footer }: AuthFormProps
                             {info}
                         </p>
                     )}
-                    <button
-                        type="submit"
-                        disabled={submitting}
-                        className="w-full rounded-md bg-indigo-600 px-4 py-2 font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-300 disabled:opacity-60"
-                    >
+                    <button type="submit" disabled={submitting} className={`${primaryButtonClass} w-full`}>
                         {submitting ? 'Please wait…' : submitLabel}
                     </button>
                 </form>

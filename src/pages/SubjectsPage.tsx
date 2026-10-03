@@ -40,8 +40,8 @@ export function SubjectsPage() {
 
     return (
         <section className="space-y-6">
-            <h1 className="text-2xl font-semibold text-slate-900">Subjects</h1>
-            <div className="rounded-lg border border-slate-200 bg-white p-4">
+            <h1 className="text-3xl font-bold tracking-tight text-slate-900">Subjects</h1>
+            <div className="rounded-2xl border border-slate-200/70 bg-white/80 p-5 shadow-sm backdrop-blur">
                 <h2 className="mb-3 text-sm font-semibold text-slate-700">New subject</h2>
                 <SubjectForm
                     submitLabel="Add subject"

@@ -72,7 +72,7 @@ export function TopicsPage() {
                 <Link to="/subjects" className={backLinkClass}>
                     ← All subjects
                 </Link>
-                <h1 className="mt-2 flex items-center gap-3 text-2xl font-semibold text-slate-900">
+                <h1 className="mt-2 flex items-center gap-3 text-3xl font-bold tracking-tight text-slate-900">
                     <span
                         aria-hidden="true"
                         className="h-4 w-4 shrink-0 rounded-full"
@@ -81,7 +81,7 @@ export function TopicsPage() {
                     {subject.name}
                 </h1>
             </div>
-            <div className="rounded-lg border border-slate-200 bg-white p-4">
+            <div className="rounded-2xl border border-slate-200/70 bg-white/80 p-5 shadow-sm backdrop-blur">
                 <h2 className="mb-3 text-sm font-semibold text-slate-700">New topic</h2>
                 <TopicForm
                     submitLabel="Add topic"
