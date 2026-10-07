@@ -69,3 +69,17 @@ export interface TopicOption {
     title: string
     subjects: { name: string }
 }
+export interface CompletedSession {
+    date: string
+    duration_minutes: number
+    topics: { subject_id: string; subjects: { name: string; color: string } } | null
+}
+
+export interface ExamTopic {
+    id: string
+    title: string
+    subject_id: string
+    exam_date: string
+    last_reviewed_at: string | null
+    subjects: { name: string; color: string }
+}

@@ -10,6 +10,7 @@ import { SignupPage } from './pages/SignupPage'
 import { SubjectsPage } from './pages/SubjectsPage'
 import { TopicsPage } from './pages/TopicsPage'
 import { PlannerPage } from './pages/PlannerPage'
+import { ProgressPage } from './pages/ProgressPage'
 
 export default function App() {
   return (
@@ -25,6 +26,7 @@ export default function App() {
                 <Route path="subjects" element={<SubjectsPage />} />
                 <Route path="subjects/:subjectId" element={<TopicsPage />} />
                 <Route path="planner" element={<PlannerPage />} />
+                <Route path="progress" element={<ProgressPage />} />
               </Route>
             </Route>
             <Route path="*" element={<Navigate to="/" replace />} />
